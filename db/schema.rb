@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171019032534) do
+ActiveRecord::Schema.define(version: 20171019051432) do
+
+  create_table "products", force: :cascade do |t|
+    t.text "image"
+    t.string "name"
+    t.integer "rating"
+    t.integer "user_id"
+    t.float "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_products_on_user_id"
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.text "avatar_data"
