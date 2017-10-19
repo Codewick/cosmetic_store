@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 
   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  <%= link_to('My Profile', profile_path) %>
+  <%#= link_to('My Profile', profile_path) %>
 
 <% else %>
 
