@@ -81,4 +81,4 @@ test:
 production:
   <<: *default
   database: cosmetic_store_production
-  username: cosmetic_store
+  # username: cosmetic_store
