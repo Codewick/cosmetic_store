@@ -82,4 +82,3 @@ production:
   <<: *default
   database: cosmetic_store_production
   username: cosmetic_store
-  password: <%= ENV['COSMETIC_STORE_DATABASE_PASSWORD'] %>
