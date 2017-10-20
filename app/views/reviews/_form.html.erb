@@ -1,0 +1,27 @@
+<%= form_for([@product,@product.reviews.build]) do |form|  %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+      <ul>
+      <% review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :content %>
+    <br>
+    <%= form.text_area :content,
+      :placeholder => "Enter content...", id: :review_content %>
+  </div>
+  <div class="field">
+    <%#= form.label :user_id %>
+    <%= form.hidden_field :user_id, :value => current_user.id, id: :review_user_id%>
+  </div>
+<br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+Add Comment Collapse

@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @product.image %>
+  <%= image_tag @product.image.url, class: 'img-fluid' %>
 </p>
 
 <p>
@@ -15,15 +14,44 @@
   <%= @product.rating %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @product.user %>
-</p>
 
 <p>
   <strong>Price:</strong>
   <%= @product.price %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
+<% if current_user.admin? %>
+  <%= link_to 'Edit', edit_product_path(@product) %>
+  <% else %>
+
+  <%= render 'order', order: @order, hide_fields:true %>
+  <!--optional , hide_fields:true -->
+<% end %>
+
+<br>
+<%= render 'reviews/form' %>
+<br><br> |
 <%= link_to 'Back', products_path %>
+<br><br>
+<br><br>
+  <% if @reviews.any?%>
+<p>
+  <div class="review">
+  <strong>Reviews:</strong><br><br>
+    </div>
+    <tbody>
+      <% @reviews.each do |review| %>
+        <tr>
+          <td>
+
+          
+            <div class="content">
+          <td><%= review.content %></td>
+          <%= link_to 'x',product_review_path(@product,review),method: :delete%>
+          <br><br>
+          </div>
+        </tr>
+      <% end %>
+    </tbody>
+  <!-- </table> -->
+<% end %>

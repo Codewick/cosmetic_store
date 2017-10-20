@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @order.quantity %>
+</p>
+
+<p>
+  <strong>Amount to be paid:</strong>
+  <%= @order.total_amount %>
+</p>
+
+
+<%= link_to 'Back', orders_path %>

@@ -1,20 +1,35 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
+   if params[:search]
+     @products = Product.search(params[:search]).order("created_at DESC")
+   else
+     @products = Product.all.order("created_at DESC")
+   end
+
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    @order = Order.new
+    @order.product_id = @product.id
+    @order.user_id = current_user.id
+
+    @product = Product.includes(:user).find(params[:id])
+    @reviews = @product.reviews.includes(:user).all
+    @review  = @product.reviews.build(user_id: current_user.id) if current_user
   end
 
   # GET /products/new
   def new
     @product = Product.new
+
   end
 
   # GET /products/1/edit
@@ -69,6 +84,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:image, :name, :rating, :user_id, :price)
+      params.require(:product).permit(:image, :name, :rating, :price)
     end
 end

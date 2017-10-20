@@ -11,10 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_area :image, id: :product_image %>
+  <div class="form-group">
+    <%= form.label :image, class: 'btn btn-primary' %>
+    <%= form.file_field :image, id: :product_image, class: 'btn btn-primary' %>
   </div>
+
 
   <div class="field">
     <%= form.label :name %>
@@ -26,10 +27,6 @@
     <%= form.number_field :rating, id: :product_rating %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :product_user_id %>
-  </div>
 
   <div class="field">
     <%= form.label :price %>
