@@ -12,12 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20171020034756) do
 
+  # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "orders", force: :cascade do |t|
     t.integer "quantity"
-    t.integer "user_id"
-    t.integer "product_id"
+    t.bigint "user_id"
+    t.bigint "product_id"
     t.float "total_amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -37,7 +38,7 @@ ActiveRecord::Schema.define(version: 20171020034756) do
   create_table "profiles", force: :cascade do |t|
     t.string "username"
     t.string "email"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
@@ -45,8 +46,8 @@ ActiveRecord::Schema.define(version: 20171020034756) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "content"
-    t.integer "user_id"
-    t.integer "product_id"
+    t.bigint "user_id"
+    t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_reviews_on_product_id"
@@ -71,4 +72,9 @@ ActiveRecord::Schema.define(version: 20171020034756) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orders", "products"
+  add_foreign_key "orders", "users"
+  add_foreign_key "profiles", "users"
+  add_foreign_key "reviews", "products"
+  add_foreign_key "reviews", "users"
 end
