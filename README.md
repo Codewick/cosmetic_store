@@ -1,24 +1,37 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+# Cosmetic_Store
+# ataeam Members: Kasumi, Reena, Sana & Sakshi
 
-* System dependencies
+## Challenges
 
-* Configuration
+* Creating User experience & MVP
+* Wireframes
+* Creating websites with Demonstrate knowledge of Rails conventions
+* Pushing work to Github and deploying to Heroku
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## What I learnt
 
-* Deployment instructions
+* Use of Figma to create wireframe
+* Balsamiq to create mock ups.
+* Git hub- creating my branch, working with master branch
+* working in a team and achieving the result everyone wanted to achieve.
 
-* ...
+
+## Summary of the team work
+
+Please click here to see design mock ups
+
+For home page [click here](https://github.com/GP-corps/Burger-King-Sizzles/blob/sana/app/assets/images/homepage.png "Home page")
+
+For sign up page [click here](https://github.com/GP-corps/Burger-King-Sizzles/blob/sana/app/assets/images/Signup%20page.png "sign up page")
+
+For user's log in [click here](https://github.com/GP-corps/Burger-King-Sizzles/blob/sana/app/assets/images/homepage.png "log in page")
+
+For User's page with sizzle feed[click here](https://github.com/GP-corps/Burger-King-Sizzles/blob/sana/app/assets/images/User's%20Login%20page.png "User's log in page")
+
+For BK stream page [click here](https://github.com/GP-corps/Burger-King-Sizzles/blob/sana/app/assets/images/bk_stream_page_1024.png "BK STREAM PAGE")
