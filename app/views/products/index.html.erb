@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container">
 <h1>Products</h1>
 
 <<table class="table">
@@ -38,3 +38,4 @@
 <% if current_user.admin? %>
   <%= link_to 'Add new Item', new_product_path %>
 <% end %>
+</div>
