@@ -17,11 +17,38 @@
   */
 
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "home.scss";
+@import "design-block/froala_blocks.scss";
+
 
 .logo {
-  width: 50px;
+	width: 50px;
 }
 
+.user-profile,  .user-profile:hover, .user-profile:active{
+	background-color: transparent;
+	border:0;
+	color: #fff;
+}
+
+.product-card{
+	    min-height: 450px;
+}
+.warning {
+	  margin-left: 30%;
+      color: #FF0000;
+      font-size: larger;
+}
+.success {
+	  margin-left: 37%;
+      color: #008000;
+      font-size: x-large;
+}
+.mt-4 {
+	margin-left: 22%;
+}
 .star-rating{
 	font-size: 0;
 }
