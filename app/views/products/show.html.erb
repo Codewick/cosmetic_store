@@ -49,10 +49,10 @@
             User: <%= user.email %>
 
             <div class="content">
-          <td><%= review.content %></td>
-          <%= link_to 'x',product_review_path(@product,review),method: :delete%><br>
-          Rating: <% review.rating.times do %>
-            <%= image_tag("star-on.png") %>
+            <td><%= review.content %></td>
+            <%= link_to 'x',product_review_path(@product,review),method: :delete%><br>
+            Rating: <% review.rating.times do %>
+              <%= image_tag("star-on.png") %>
             <% end %>
           <br><br>
           </div>
