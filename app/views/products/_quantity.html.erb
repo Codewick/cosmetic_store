@@ -1,11 +1,16 @@
 <%= form_with(model: order, local: true) do |form| %>
 
-<div class="field">
-  <%= form.label :'Enter quantity' %>
-  <%= form.number_field :quantity, id: :order_quantity %>
+<div class="row align-items-center mt-4">
+  <div class="col mt-4">
+	  <%= form.label :'Enter quantity' %>
+	  <%= form.number_field :quantity, id: :order_quantity %>
+  </div>
 </div>
-<div class="actions">
-  <%= form.submit "BUY" %>
-</div>
+
+<div class="row mt-4">
+   <div class="col">
+      <button class="btn">Submit</button>
+    </div>
+ </div>
 
 <% end %>
