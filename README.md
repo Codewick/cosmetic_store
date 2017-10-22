@@ -1,37 +1,40 @@
 
 
 
-# Cosmetic_Store
+#Term 2 Hackathon Project
+#Team Members: Kasumi, Reena, Sana & Sakshi
 
-# Team Members: Kasumi, Reena, Sana & Sakshi
+#Challenge -
 
-## Summary of the team work
+As a team we had to create an online-store (not two sided market place) with various requirements.
 
-Please click here to browse our website on Heroku https://cosmeticlatest.herokuapp.com/users/sign_in
+Use Maslow’s hierarchy to help find needs: combine two needs
+Use of: user stories, wireframes, ERDs
+Must use image uploading
+Bonus: Incorporates an API as an enhancement
+Must be deployed to Heroku
+Prepare slides for a 7 minute Presentation.
 
-Please click here to see design mock ups
+#Please click the following:
 
-Please click here to check the website[click here](https://github.com/GP-corps/Burger-King-Sizzles/blob/sana/app/assets/images/homepage.png "Home page")
+##Please click here to browse our website on Heroku https://cosmeticlatest.herokuapp.com/users/sign_in
 
-For sign up page [click here](https://github.com/GP-corps/Burger-King-Sizzles/blob/sana/app/assets/images/Signup%20page.png "sign up page")
+## Please click here to checkout User stories https://trello.com/b/AuhGZNdR/cosmeticshop
 
-For user's log in [click here](https://github.com/GP-corps/Burger-King-Sizzles/blob/sana/app/assets/images/homepage.png "log in page")
-
-For User's page with sizzle feed[click here](https://github.com/GP-corps/Burger-King-Sizzles/blob/sana/app/assets/images/User's%20Login%20page.png "User's log in page")
-
-For BK stream page [click here](https://github.com/GP-corps/Burger-King-Sizzles/blob/sana/app/assets/images/bk_stream_page_1024.png "BK STREAM PAGE")
-
-
-## Challenge
-
-* Creating User experience & MVP
-* Wireframes
-* Pushing work to Github and deploying to Heroku
+## please click here to check out ERD https://github.com/Codewick/cosmetic_store/blob/sana/app/assets/images/ERD.png
 
 
 
+## What was Challenges
 
-## What we learnt most
+* Merging different trees in the master branches in the Github and pushing our works was one of the most difficult Challenges
+we faced and lost substantial amount of time during this.
 
-* Merging in the Github and deploying to the Heroku was the most challenging aspects we faced. However,
-All we need to do was Heroku db:migrate
+* Deploying to the Heroku was bit difficult initially However,
+ Heroku db:migrate worked at last.
+
+ #Use of Technologies:
+ * git hub
+ * Heroku
+ * Rails
+ * Use of various Gems
