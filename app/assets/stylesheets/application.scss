@@ -12,7 +12,9 @@
  *
 
  */
-
+ /*
+  *= require font-awesome
+  */
 
 @import "bootstrap";
 @import "font-awesome-sprockets";
@@ -25,10 +27,10 @@
 	width: 50px;
 }
 
-.user-profile,  .user-profile:hover{
-	background-color: #fff;
+.user-profile,  .user-profile:hover, .user-profile:active{
+	background-color: transparent;
 	border:0;
-	color: #777;
+	color: #fff;
 }
 
 .product-card{
@@ -47,9 +49,33 @@
 .mt-4 {
 	margin-left: 22%;
 }
-.review {
-	margin-left: 33%;
+.star-rating{
+	font-size: 0;
 }
-.fa {
-	color: red;
+.star-rating__wrap{
+	display: inline-block;
+	font-size: 1rem;
+}
+.star-rating__wrap:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+.star-rating__ico{
+	float: right;
+	padding-left: 2px;
+	cursor: pointer;
+	color: #FFB300;
+}
+.star-rating__ico:last-child{
+	padding-left: 0;
+}
+.star-rating__input{
+	display: none;
+}
+.star-rating__ico:hover:before,
+.star-rating__ico:hover ~ .star-rating__ico:before,
+.star-rating__input:checked ~ .star-rating__ico:before
+{
+	content: "\f005";
 }
