@@ -17,13 +17,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username, id: :profile_username %>
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname, id: :profile_firstname %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :profile_email %>
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname, id: :profile_lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_area :address, id: :profile_address %>
   </div>
 
   <div class="field">

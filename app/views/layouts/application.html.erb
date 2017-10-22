@@ -8,17 +8,17 @@
   </head>
   <body>
   <header>
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg bg-dark">
         <a class="navbar-brand" href="">
          <%= image_tag("logo_m.jpg", :class =>"logo") %>
         </a>
            <div class="collapse navbar-collapse" id="navbarNav5">
              <ul class="navbar-nav mr-auto">
                <li class="nav-item">
-                 <%= link_to('Products', products_path, :class => "nav-link")  %>
+                 <%= link_to('Products', products_path, :class => "nav-link text-white")  %>
                </li>
                <li class="nav-item">
-                <%= link_to('Contact', contact_path, :class => "nav-link")  %>
+                <%= link_to('Contact', contact_path, :class => "nav-link text-white")  %>
                </li>
                <li class="nav-item">
                 <%= form_tag(products_path, :method => "get", id: "search-form") do %>
@@ -39,7 +39,7 @@
               <li class="nav-item">
               <% if user_signed_in? %>
                 <div class="dropdown">
-                  <button class="btn btn-light dropdown-toggle user-profile" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <button class="btn btn-light dropdown-toggle user-profile ml-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="fa fa-user"></span>
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
