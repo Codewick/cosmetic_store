@@ -9,19 +9,20 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= form.label :content %>
-    <br>
-    <%= form.text_area :content,
-      :placeholder => "Enter content...", id: :review_content %>
-  </div>
+   <h4 class="review"> Add Review </h4>
+   <div class="row align-items-center">
+      <div class="col mt-4">
+        <%= form.text_area :content, :placeholder => "Enter review", id: :review_content , :class => "form-control"%>
+      </div>
+    </div>
   <div class="field">
     <%#= form.label :user_id %>
     <%= form.hidden_field :user_id, :value => current_user.id, id: :review_user_id%>
   </div>
 <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class=> "btn btn-round mt-4 mb-5 mb-md-0"%>
   </div>
 <% end %>
-Add Comment Collapse
+
+
