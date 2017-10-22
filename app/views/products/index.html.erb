@@ -1,58 +1,31 @@
-<p id="notice"><%= notice %></p>
-<div class="container">
-<h1>Products</h1>
-
-<<table class="table">
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Rating</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-
-    <% @products.each do |product| %>
-    <tr>
-      <td><img src="<%= product.image_url %>" width="100" height="100"></td>
-      <td><%= product.name %></td>
-      <% review = Review.where(product_id: product.id) %>
-
-      <% rating_array = [] %>
-      <% rating_array = review.pluck(:rating) %>
-
-      <% if rating_array.any? %>
-        <% average_rating = rating_array.inject{ |sum, el| sum + el }.to_f / rating_array.size %>
-        <td><% average_rating.to_i.times do %>
-          <%= image_tag("star-on.png") %>
+<section class="fdb-block">
+  <div class="container">
+    <div class="row">
+      <% @products.each do |product| %>
+      <div class="col-sm-4 col-6">
+        <div class="card product-card mb-5">
+            <%= link_to product_path(product) do %>
+            <%= image_tag product.image_url , class: "img-fluid"%>
+            <% end %>
+            <div class="card-body">
+              <p class="text-h4"><%= product.name %></p>
+              <p class="text-h4 text-primary"> $ <%= product.price %></p>
+              <p>
+                <% if current_user.admin? %>
+                  <td><%= link_to 'Edit', edit_product_path(product) %></td>
+                  <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <% if @products.blank? %>
+          <!-- <h4>There are no products , please try again later</h4> -->
         <% end %>
-        </td>
-      <% else %>
-        <td><% 5.times do %>
-          <%= image_tag("star-off.png") %>
         <% end %>
-        </td>
-      <% end %>
-      <td><%= product.price %></td>
-      <td><%= link_to 'Show', product %></td>
+      </div>
       <% if current_user.admin? %>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <%= link_to 'Add new Item', new_product_path %>
       <% end %>
-    </tr>
-
-    <% if @products.blank? %>
-      <!-- <h4>There are no recipes containing the term <%= params[:search] %>.</h4> -->
-    <% end %>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<% if current_user.admin? %>
-  <%= link_to 'Add new Item', new_product_path %>
-<% end %>
-</div>
+  </div>
+</section>

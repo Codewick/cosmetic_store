@@ -19,5 +19,7 @@
 
 /node_modules
 /yarn-error.log
+/public/uploads/store
+/public/uploads/cache
 
 .byebug_history

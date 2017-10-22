@@ -20,6 +20,7 @@ class ProductsController < ApplicationController
     @order = Order.new
     @order.product_id = @product.id
     @order.user_id = current_user.id
+    @order.quantity = 1;
 
     @product = Product.includes(:user).find(params[:id])
     @reviews = @product.reviews.includes(:user).all
@@ -84,6 +85,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:image, :name, :rating, :price)
+      params.require(:product).permit(:image, :name, :rating, :price, :description)
     end
 end

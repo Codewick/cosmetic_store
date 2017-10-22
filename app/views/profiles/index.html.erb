@@ -6,8 +6,9 @@
   <thead>
     <tr>
       <th>Avatar data</th>
-      <th>Username</th>
-      <th>Email</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Address</th>
       <th>User</th>
       <th colspan="3"></th>
     </tr>
@@ -17,8 +18,9 @@
     <% @profiles.each do |profile| %>
       <tr>
         <td><%= profile.avatar_data %></td>
-        <td><%= profile.username %></td>
-        <td><%= profile.email %></td>
+        <td><%= profile.firstname %></td>
+        <td><%= profile.lastname %></td>
+        <td><%= profile.address %></td>
         <td><%= profile.user %></td>
         <td><%= link_to 'Show', profile %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
