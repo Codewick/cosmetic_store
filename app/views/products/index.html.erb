@@ -24,13 +24,18 @@
       <% rating_array = [] %>
       <% rating_array = review.pluck(:rating) %>
 
-      <% average_rating = rating_array.inject{ |sum, el| sum + el }.to_f / rating_array.size %>
-
-
-      <td><% average_rating.to_i.times do %>
-        <%= image_tag("star-on.png") %>
+      <% if rating_array.any? %>
+        <% average_rating = rating_array.inject{ |sum, el| sum + el }.to_f / rating_array.size %>
+        <td><% average_rating.to_i.times do %>
+          <%= image_tag("star-on.png") %>
+        <% end %>
+        </td>
+      <% else %>
+        <td><% 5.times do %>
+          <%= image_tag("star-off.png") %>
+        <% end %>
+        </td>
       <% end %>
-      </td>
       <td><%= product.price %></td>
       <td><%= link_to 'Show', product %></td>
       <% if current_user.admin? %>
