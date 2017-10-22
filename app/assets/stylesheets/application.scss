@@ -15,7 +15,20 @@
 
 
 @import "bootstrap";
+@import "home.scss";
+@import "design-block/froala_blocks.scss";
+
 
 .logo {
-  width: 50px;
+	width: 50px;
+}
+
+.user-profile,  .user-profile:hover{
+	background-color: #fff;
+	border:0;
+	color: #777;
+}
+
+.product-card{
+	    min-height: 450px;
 }
