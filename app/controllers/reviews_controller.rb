@@ -25,7 +25,7 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-
+    
     @product = Product.find(params[:product_id])
       @product.reviews.create(review_params)
       redirect_to product_path(@product)
@@ -62,6 +62,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:content, :user_id, :product_id)
+      params.require(:review).permit(:content, :user_id, :product_id, :rating)
     end
 end

@@ -11,27 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity, id: :order_quantity %>
+  <div class="row align-items-center">
+    <div class="col mt-4">
+      <%= form.label :quantity %>
+      <%= form.number_field :quantity, id: :order_quantity , :class => "form-control", :placeholder => "Quantity"%>
+    </div>
   </div>
 
-  <div class="field">
-
-    <%= form.hidden_field :user_id, id: :order_user_id %>
-  </div>
-
-  <div class="field">
-
-    <%= form.hidden_field :product_id, id: :order_product_id %>
-  </div>
-
-  <div class="field">
   
-    <%= form.hidden_field :total_amount, id: :order_total_amount %>
+  <div class="row align-items-center">
+    <div class="col">
+    <%= form.hidden_field :user_id, id: :order_user_id %>
+   </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="row align-items-center">
+    <div class="col">
+     <%= form.hidden_field :product_id, id: :order_product_id %>
+    </div>
   </div>
+
+  <div class="row align-items-center">
+    <div class="col">
+      <%= form.hidden_field :total_amount, id: :order_total_amount %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button  class="btn btn-round mt-4 mb-5 mb-md-0", data-toggle="modal" data-target= "#buy_confirm"> Buy</button>
+    </div>
+  </div>
+
 <% end %>

@@ -4,12 +4,13 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders =  Order.includes(:product).where(user_id: current_user.id)
   end
 
   # GET /orders/1
   # GET /orders/1.json
   def show
+    Order.includes(:product).find(params[:id])
   end
 
   # GET /orders/new
@@ -30,7 +31,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'You order has been created successfully' }
+        format.html { redirect_to @order, notice: 'Invoice' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }

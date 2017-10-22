@@ -9,19 +9,31 @@
       </ul>
     </div>
   <% end %>
+
+  
+<% if !current_user.admin? %>
   <div class="field">
-    <%= form.label :content %>
+     <%= form.label :content %>
     <br>
     <%= form.text_area :content,
-      :placeholder => "Enter content...", id: :review_content %>
+      :placeholder => "Write your reviews...", id: :review_content %>
   </div>
-  <div class="field">
-    <%#= form.label :user_id %>
+
+  <div class="form-group row">
+     <!--<%= form.label :"Enter rating (1-5):", class: 'col-sm-2 form-control-label' %> -->
+     <h3> Enter Rating (1-5)</h3>
+     <div class="col-sm-6">
+       <%= form.number_field :rating %>
+     </div>
+ </div>
+
+  <!-- <div class="field">
+    <%= form.label :user_id %>
     <%= form.hidden_field :user_id, :value => current_user.id, id: :review_user_id%>
-  </div>
+  </div> -->
 <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class=> "btn btn-round mt-4 mb-5 mb-md-0"%>
   </div>
+  <% end %>
 <% end %>
-Add Comment Collapse
