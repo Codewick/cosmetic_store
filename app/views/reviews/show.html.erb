@@ -4,6 +4,10 @@
   <strong>Content:</strong>
   <%= @review.content %>
 </p>
+<div class="reviews">
+        <div class="star-rating" data-score= <%= review.rating %> ></div>
+        <p><%= review.content %></p>
+      </div>
 
 <p>
   <strong>User:</strong>
