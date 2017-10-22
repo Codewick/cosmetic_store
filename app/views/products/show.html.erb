@@ -35,6 +35,7 @@
         <% @reviews.each do |review| %>
           <div> <%= review.content%> </div>
           <%= link_to 'x',product_review_path(@product,review),method: :delete%>
+          
         <% end %>
       </div>
 
