@@ -36,6 +36,8 @@ Products Details https://github.com/Codewick/cosmetic_store/blob/sana/app/assets
 Rating
 https://github.com/Codewick/cosmetic_store/blob/sana/app/assets/images/RATING%20wireframe.png
 
+testing
+
 
 
 
