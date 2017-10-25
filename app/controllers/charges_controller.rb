@@ -23,7 +23,10 @@ def create
 
   )
 
-  charge = Stripe::Charge.create(
+  current_user.stripe_id = customer.id
+  current_user.save()
+
+    charge = Stripe::Charge.create(
     :customer    => customer.id,
     :amount      => @amount,
     :description => 'Rails Stripe customer',

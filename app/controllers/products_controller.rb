@@ -5,11 +5,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    # @products = Product.all
    if params[:search]
      @products = Product.search(params[:search]).order("created_at DESC")
+     @average_rating = @products.average(:rating)
    else
      @products = Product.all.order("created_at DESC")
+     @average_rating = @products.average(:rating)
    end
 
   end
