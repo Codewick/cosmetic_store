@@ -18,7 +18,7 @@ Prepare slides for a 7 minute Presentation.
 
 ## Please click the following:
 
-Please click here to browse our website on Heroku https://cosmeticlatest.herokuapp.com/users/sign_in
+Please click here to browse our website on Heroku https://cosmetic-store.herokuapp.com
 
 Please click here to checkout User stories https://trello.com/b/AuhGZNdR/cosmeticshop
 
